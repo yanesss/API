@@ -1,6 +1,7 @@
 /**
  * Define how a subscription should look
  * Schema
+ *
  */
 
 const mongoose = require("mongoose");
