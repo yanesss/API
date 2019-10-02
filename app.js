@@ -2,8 +2,16 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan"); //funnel all requests
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const subscriptionRoutes = require("./routes/subscriptions"); //provides the route to subscriptions
+
+//connect to database
+mongoose.connect(
+  "mongodb+srv://acy:" +
+    process.env.MONGO_ATLAS_PW +
+    "@cluster0-ji0sb.mongodb.net/test?retryWrites=true&w=majority"
+);
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false })); //false for simple bodies --use true if rich bodies needed
