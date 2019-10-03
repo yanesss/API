@@ -10,7 +10,8 @@ const subscriptionRoutes = require("./routes/subscriptions"); //provides the rou
 mongoose.connect(
   "mongodb+srv://acy:" +
     process.env.MONGO_ATLAS_PW +
-    "@cluster0-ji0sb.mongodb.net/test?retryWrites=true&w=majority"
+    "@node-subscriptions-ykr60.mongodb.net/admin?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 app.use(morgan("dev"));
