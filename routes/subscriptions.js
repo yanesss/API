@@ -10,30 +10,25 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  //create new sub
-  const subscription = {
-    name: req.body.name
-  };
-
   //instance of model
-  const sub = new Sub({
+  const subscription = new Sub({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name
   });
 
   //save to db.
-  sub
+  subscription
     .save()
     .then(result => {
       console.log(result);
     })
     .catch(err => {
-      console.log(err);
+      console.log(err => console.log(err));
     });
 
   res.status(200).json({
     message: "Handling POST requests to /subscriptions",
-    createdSubscription: sub
+    createdSubscription: subscription
   });
 });
 
