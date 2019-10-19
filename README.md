@@ -1,2 +1,2 @@
 # API
-Subscription API in progress. Will provide quick access to available online subscriptions.
+REST API designed for iOS subscription application.  Allows application to load subscription list via the api.  This is ran locally, therefore there is no outside access to this API.
